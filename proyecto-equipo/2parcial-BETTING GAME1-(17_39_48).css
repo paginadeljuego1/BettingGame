@@ -1,0 +1,24 @@
+body {
+    background-color: #000640; /* Cambia el color de fondo de todo el cuerpo del documento */
+    color: white; /* Cambia el color del texto en todo el documento */
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+h1{
+    font-size: 70px;
+     color: #C59713;
+     margin-top: 50px;
+    }
+button {
+    background-color: #white;
+    color: #27522D;
+    padding: 15px 20px;
+    border: none;
+    text color: #ABABAB;
+    cursor: pointer;
+    border-radius: 5px;
+}
+  

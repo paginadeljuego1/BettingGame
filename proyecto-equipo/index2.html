@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!--DOCTYPE que informa al navegador que el contenido siguiente se trata de un archivo HTML-->
+<html lang="es"><!-- Declaración del idioma de la página -->
+<head><!--abre la cabecera de la pagina -->
+    <meta charset="UTF-8"><!--es un formato de caracteres ampliamente empleado en internet (si no disponemos de este formato no podemos disponer caracteres acentuados)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Configuración de la vista en dispositivos móviles -->
+    <title>Ejemplo de JavaScript con diseño</title><!--es el titulo de la pagina-->
+    <link rel="stylesheet" href="file:///E:/proyecto-equipo/index3.html"> <!-- Enlace a otro archivo CSS para estilos -->
+
+    <link rel="stylesheet" href="2parcial-BETTING GAME2-(17_39_48).css"><!-- Enlace al archivo CSS para estilos -->
+</head><!--cierra la cabecera de la pagina-->
+<body><!--abre el cuerpo de la pagina-->
+    <div class="container"><!-- Contenedor principal -->
+        <h1>¡REGISTRATE!</h1><!-- Encabezado principal REGISTRATE-->
+        <div class="container2"><!-- Contenedor secundario -->
+            <h2>Registro de Usuario</h2> <!-- Encabezado secundario REGISTRO DE USUSARIO -->
+            <form id="registrationForm"><!-- Formulario de registro con un identificador 'registrationForm' -->
+                <label for="name">Nombre:</label><!-- Etiqueta para el campo de nombre -->
+                <input type="text" id="name" name="name" required> <!-- Campo de entrada para el nombre, con un id 'name' y un atributo 'required' que indica que es obligatorio -->
+                <br><!--salto de linea-->
+                <label for="age">Edad:</label><!-- Etiqueta para el campo de edad -->
+                <input type="number" id="age" name="age" required><!-- Campo de entrada para la edad, con un id 'age' y un atributo 'required' que indica que es obligatorio -->
+                <br><!--salto de linea-->
+                <button type="submit">Registrarse</button><!-- Botón de envío del formulario -->
+            </form><!--finaliza el formulario-->
+            <p id="message"></p><!-- Párrafo vacío con un id 'message' para mostrar mensajes al usuario -->
+        </div><!--finaliza la marca div de divicion-->
+        <p id="result"></p><!-- Párrafo vacío con un id 'result' para mostrar resultados al usuario -->
+    </div><!--finaliza la marca div de division-->
+    <script src="script.js"></script><!-- Enlace al archivo JavaScript para funcionalidad dinámica -->
+</body>
+</html>

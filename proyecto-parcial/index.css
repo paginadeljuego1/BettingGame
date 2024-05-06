@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;/**esta marca cambia el tipo de letra**/
+  margin: 0;/**esta marca es el margen del cuerpo de la pagina**/
+  padding: 0;/**el padding del cuerpo de la pagina**/
+   background-image: url('imagen1.1.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen */
+      background-size: cover; /* Hace que la imagen de fondo cubra todo el área del cuerpo */
+      background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+}
+
+h1 {
+  text-align: center;/**centra el texto de h1**/
+  color: #004080; /* Color azul oscuro */
+  font-size: 45px;/**aumenta los pixeles de las letras**/
+}
+
+p {
+  text-align: center;/**centra el parrafo**/
+  font-style: italic;/**el texto aparece en cursiva**/
+  font-size: 37px;/**aumenta el tamaño de pixeles de las letras**/
+}
+caption{
+  font-size: 28px;/**cambia el tamaño de pixeles de caption**/
+}
+
+.table-list-container {/**le da estilo al contenedor de la lista **/
+  display: flex;/**para hacer flexible los contenedores para mover o ajustarse como se nesesite**/
+  justify-content: space-around;/**esta marca diciendo al navegador que quiere que los elementos dentro del contenedor se distribuyan uniformemente a lo largo del eje principal **/
+  margin: 20px 0;/** es el margen**/
+}
+
+.table-list-container > div {
+  width: 45%;/**establece el ancho del elemento**/
+}
+
+table {
+  width: 100%;/**establece el ancho del elemento**/
+  border-collapse: collapse;/** indica que los bordes de las celdas de la tabla se fusionarán sin espacios entre ellos**/
+  border-color: #f2f2f2;/**el color del bordo**/
+}
+
+table, th, td {
+  border: 1px solid black; /* Color del borde */
+  padding: 8px;/**se abre padding**/
+}
+
+th {
+  background-color: #f2f2f2 ; /* Color de fondo gris claro */
+}
+
+td {
+  text-align: center;/**texto centrado**/
+}
+
+ol {
+  padding-left: 20px;/**padding a la izquierda**/
+}
+
+h2{
+   color: #004080;/**el color de la letra**/
+   font-size: 45px;/**el tamaño de pixeles de la letra**/
+   text-align: center; /**el texto centrado**/
+} 
+h3, h4, h5{
+  text-align: center;/**el texto centrado**/
+  color: #004080; /* Color azul oscuro */
+}
+h6{
+  text-align: center;/**el texto centrado**/
+  font-size: 45px;/**el tamañio de pixeles de h6**/
+}
+h7{
+  font-size: 45px;/**el tamaño de pixeles de la letra de h7**/
+  background-color: #FFFF00;/**se subraya de color amarillo h7**/
+}
+
+a {
+  color: #000000; /* Color negro */
+  font-size: 39px;/** el tamaño de pixeles de los hipervinculos**/
+  background-color: #9b9b9b;/**subraya de color gris**/
+}
+
+a:hover {
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+center {
+  display: block;/**se utiliza para cambiar un elemento en línea (inline) a un elemento de bloque (block).**/
+  margin-left: auto;/**auto marge a la izquierda**/
+  margin-right: auto;/**automarge a la derecha**/
+  text-align: center;/**centra el texto**/
+}
+
+table.border9 {
+  border-style: outset;/**el estilo del borde**/
+  border-width: 9px;/**el tamaño del borde**/
+  border-color: #f2f2f2; /* Color del borde */
+}
+
+table.border9 img {
+  display: block;/**se utiliza para cambiar un elemento en línea (inline) a un elemento de bloque (block).**/
+  margin-left: auto;/**automargen a la izqquierda**/
+  margin-right: auto;/**auto margen a la derecha**/
+}
+button {
+            display: block;
+            margin: 0 auto;
+            font-size: 5.9em;
+            padding: 10px 20px;
+            color:  #0000ff;
+            background-color: #9b9b9b;
+        }

@@ -1,0 +1,48 @@
+body {
+    background-color: #260129; /* Cambia el color de fondo de todo el cuerpo del documento */
+    color: black; /* Cambia el color del texto en todo el documento */
+     text-align: center;/**/
+}
+
+.container1 {
+    text-align: center;/*centra el texto*/
+    margin-top: 50px;/*"margin-top" controla la distancia entre el borde superior del elemento y el
+     elemento que lo precede*/
+}
+h1{
+    font-size: 70px;/*aumenta el tamaño de la letra a 70 pixeles*/
+     color: #C59713;/*es el color del texto de h1*/
+     margin-top: 50px;/*margin-top" controla la distancia entre el borde superior del elemento y el
+     elemento que lo precede*/
+ }
+  h2{
+   font-size: 40px;/*aumenta el tamaño de la letra de h2 a 40 pixeles*/
+   color: #B9B9B9;/*es el color de las letras del texto*/
+ }
+  p{
+     font-size: 30px; /*aumenta el tamaño de las letras de p a 30 pixeles*/
+  }
+button {
+    background-color: black;/*resalta subrayado de color negro las letras del boton*/
+    color: gray;/*el color de las leteras es fray*/
+    padding: 15px 20px;/*define el espacio entre el borde del elemento y su contenido.*/
+    border: none;/*La propiedad border define el borde de un elemento.
+    El valor none indica que el elemento no tendrá ningún borde.*/
+    cursor: pointer;/*La propiedad cursor define el tipo de cursor que se mostrará cuando el cursor
+     del mouse esté sobre el elemento.
+     El valor pointer cambia el cursor a una mano, indicando que el elemento es interactivo y
+     puede hacer clic en él.*/
+    border-radius: 5px;/*La propiedad border-radius define el radio de los bordes de un 
+    elemento, lo que crea esquinas redondeadas.*/
+}
+p {
+    font-size: 30px;/*aumenta el tamaño de las letras de p a 30 pixeles*/
+}
+
+button:hover {
+    background-color: #45a049;/*resalta un recuadro de texto a un color  verde oscuro*/
+}
+label {
+      font-size: 20px;/*aumenta el tamaño de las letras de label a 20 pixeles*/
+   color: gray;/*es el color de las letras a color gray*/
+}

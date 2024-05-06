@@ -1,0 +1,27 @@
+body {
+    background-color: #230042; /* Cambia el color de fondo de todo el cuerpo del documento */
+    color: #EBEBEB; /* Cambia el color del texto en todo el documento */
+    text-align: center;
+}
+
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+ h1{
+    font-size: 70px;
+    color: #C59713;
+     margin-top: 50px;
+ }
+  h2{
+   font-size: 40px; 
+    color: #A0A0A0;
+ }
+  p{
+     font-size: 30px; 
+  }
+   
+#number{
+color: red;
+}

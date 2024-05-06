@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="2parcial-BETTING GAME3-(17_39_48).css">
+    <style>
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card {
+            width: 100px;
+            height: 150px;
+            margin: 10px;
+            color: black;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 150px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blackjack</h1>
+    <h2>¡Bienvenido al juego de Blackjack!</h2>
+    <p>Tu saldo actual es: <span id="saldo">100</span> créditos.</p>
+    <p>Apostar: <input type="number" id="apuesta" min="1" max="100"> créditos</p>
+    <button onclick="iniciarJuego()">¡Jugar!</button>
+    <button onclick="duplicarApuesta()">Duplicar Apuesta</button>
+    <p id="result"></p>
+    <div class="cards" id="player-cards"></div>
+    <div class="cards" id="dealer-cards"></div>
+
+    <script>
+        let saldo = 100;
+        let apuesta = 0;
+        let playerHand = [];
+        let dealerHand = [];
+        let playerTotal = 0;
+        let dealerTotal = 0;
+
+        function iniciarJuego() {
+            reiniciarJuego();
+            apuesta = parseInt(document.getElementById("apuesta").value);
+            if (apuesta > saldo) {
+                alert("No tienes suficiente saldo para realizar esta apuesta.");
+                return;
+            }
+            repartirCartas();
+            mostrarCartas();
+        }
+
+        function reiniciarJuego() {
+            playerHand = [];
+            dealerHand = [];
+            playerTotal = 0;
+            dealerTotal = 0;
+            document.getElementById("result").innerText = "";
+            document.getElementById("player-cards").innerHTML = "";
+            document.getElementById("dealer-cards").innerHTML = "";
+        }
+
+        function repartirCartas() {
+            playerHand.push(getCarta());
+            playerHand.push(getCarta());
+            dealerHand.push(getCarta());
+            dealerHand.push(getCarta());
+            playerTotal = calcularTotal(playerHand);
+            dealerTotal = calcularTotal(dealerHand);
+        }
+
+        function getCarta() {
+            let carta = Math.floor(Math.random() * 13) + 1;
+            return Math.min(carta, 10);
+        }
+
+        function calcularTotal(hand) {
+            let total = 0;
+            let ases = 0;
+            for (let carta of hand) {
+                if (carta === 1) {
+                    ases++;
+                    total += 11;
+                } else {
+                    total += carta;
+                }
+            }
+            while (total > 21 && ases > 0) {
+                total -= 10;
+                ases--;
+            }
+            return total;
+        }
+
+        function mostrarCartas() {
+            mostrarMano(playerHand, 'player-cards');
+            mostrarMano(dealerHand.slice(0, 1), 'dealer-cards');
+
+            if (playerTotal > 21) {
+                mostrarResultado("¡Te has pasado! Has perdido tu apuesta.", -apuesta);
+            } else if (playerTotal === 21 && dealerTotal !== 21) {
+                mostrarResultado("¡Blackjack! ¡Has ganado el doble de tu apuesta!", apuesta * 2);
+            } else if (playerTotal === dealerTotal) {
+                mostrarResultado("¡Empate! Recibes tu apuesta de vuelta.", apuesta);
+            } else if (dealerTotal === 21) {
+                mostrarResultado("¡El crupier tiene Blackjack! Has perdido tu apuesta.", -apuesta);
+            } else if (dealerTotal > 21) {
+                mostrarResultado("¡El crupier se ha pasado! Has ganado el doble de tu apuesta.", apuesta * 2);
+            } else if (playerTotal < dealerTotal) {
+                mostrarResultado("¡Has perdido! La mano del crupier es mayor.", -apuesta);
+            } else {
+                mostrarResultado("¡Has ganado! Tu mano es mayor que la del crupier.", apuesta);
+            }
+        }
+
+        function mostrarMano(hand, targetId) {
+            let target = document.getElementById(targetId);
+            target.innerHTML = "";
+            hand.forEach(carta => {
+                let cardElement = document.createElement('div');
+                cardElement.classList.add('card');
+                cardElement.innerText = carta;
+                target.appendChild(cardElement);
+            });
+        }
+
+        function mostrarResultado(mensaje, cambio) {
+            document.getElementById("result").innerText = mensaje;
+            actualizarSaldo(cambio);
+        }
+
+        function actualizarSaldo(cambio) {
+            saldo += cambio;
+            document.getElementById("saldo").innerText = saldo;
+        }
+
+        function duplicarApuesta() {
+        if (apuesta * 2 > saldo) {
+          alert("No tienes suficiente saldo para duplicar la apuesta.");
+                return;
+                }
+               apuesta *= 2;
+                   document.getElementById("apuesta").value = apuesta;
+    // Eliminar las siguientes dos líneas:
+    // repartirCartas();
+    // mostrarCartas();
+                 }
+
+
+       
+    </script>
+</body>
+</html>
